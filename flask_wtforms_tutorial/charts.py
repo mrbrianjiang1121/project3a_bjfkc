@@ -20,6 +20,8 @@ lowdata = []
 #Helper function for converting date
 def convert_date(str_date):
     return datetime.strptime(str_date, '%Y-%m-%d').date()
+    
+chart_type = input("Enter the chart choice of number that you would like: ")
 
 if (chart_type == '1')
 	bar_chart = pygal.Bar(x_label_rotation = 80)
@@ -31,8 +33,7 @@ if (chart_type == '1')
 	lowdata.reverse()
 	bar_chart.add('Low', convert(lowdata))
 	bar_chart.render_in_browser()
-	pass
-if (chart_type == '2')
+else if (chart_type == '2')
 	line_chart = pygal.Line(x_label_rotation = 80)
 	line_chart.title = ("Stock Data Range from " + start_date + " to " + end_date)
 	datedata.reverse()
@@ -42,4 +43,5 @@ if (chart_type == '2')
 	lowdata.reverse()
 	line_chart.add('Low', convert(lowdata))
 	line_chart.render_in_browser()
-	pass
+else:
+	print("Try again.")
